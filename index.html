@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EuroWeather</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="icon">
+      <h2 class="logo">🌍 EuroWeather</h2>
+    </div>
+
+    <div class="menu">
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Favorites</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+
+    <div class="search">
+      <input id="searchCity" class="srch" type="text" placeholder="Search city (Paris, London...)"/>
+      <button id="searchBtn" class="btn">Search</button>
+    </div>
+  </nav>
+
+  <!-- Controls -->
+  <section class="controls">
+    <div class="controls-left">
+      <select id="citySelect" class="select">
+        <option value="" disabled selected>Select a European City</option>
+        <option value="48.8566,2.3522,🇫🇷,Paris">Paris, France</option>
+        <option value="51.5074,-0.1278,🇬🇧,London">London, UK</option>
+        <option value="41.9028,12.4964,🇮🇹,Rome">Rome, Italy</option>
+        <option value="40.4168,-3.7038,🇪🇸,Madrid">Madrid, Spain</option>
+        <option value="52.5200,13.4050,🇩🇪,Berlin">Berlin, Germany</option>
+      </select>
+
+      <button id="useLocation" class="chip">📍 Use my location</button>
+    </div>
+
+    <div class="controls-right">
+      <button id="unitToggle" class="chip" aria-pressed="false">°C</button>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main id="container">
+    <!-- Current Weather -->
+    <section id="currentWeather" class="current-weather" aria-live="polite"></section>
+
+    <!-- Hourly -->
+    <h2 class="section-title">🌤️ Hourly Forecast</h2>
+    <div id="hourlyForecast" class="forecast-row" role="list"></div>
+
+    <!-- Daily -->
+    <h2 class="section-title">📅 7-Day Forecast</h2>
+    <div id="dailyForecast" class="forecast-row" role="list"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 EuroWeather | Powered by <a href="http://www.7timer.info" target="_blank" rel="noreferrer">7Timer API</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
